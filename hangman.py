@@ -1,4 +1,6 @@
+#First thing printed when we start the game
 print('Player 2 look away')
+
 #gets user to input a word and its saves as guessing word.
 guessing_word = input('Type a word,then press enter,then ctrl+l ')
 
