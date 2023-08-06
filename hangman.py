@@ -31,11 +31,16 @@ if __name__ == "__main__":
         if guess_letter in guessing_word:
             print('correct' )
 
-            #finds the position of the guess letter in the word
-            letter_position = guessing_word.index(guess_letter)
+            letter_position = 0
 
-            # change the underscore to the guess letter in the right poition.
-            player_2_word[letter_position] = guess_letter
+            for letter in guessing_word:
+
+                if letter == guess_letter:
+                    # change the underscore to the guess letter in the right poition.
+                    player_2_word[letter_position] = guess_letter
+
+                letter_position += 1
+
             print(' '.join(player_2_word))
 
             # check to see if player 2 has won, and can exit while loop
