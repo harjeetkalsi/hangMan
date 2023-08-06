@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     #gets user to input a word and its saves as guessing word.
     guessing_word = input('Type a word,then press enter,then ctrl+l ')
-
+    guessing_word = guessing_word.lower()
     # creating an empty list
     player_2_word = []
 
