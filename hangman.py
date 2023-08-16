@@ -1,10 +1,10 @@
 
 if __name__ == "__main__":
 
-    #First thing printed when we start the game
+    # First thing printed when we start the game
     print('Player 2 look away')
 
-    #gets user to input a word and its saves as guessing word.
+    # gets user to input a word and its saves as guessing word.
     guessing_word = input('Type a word,then press enter,then ctrl+l ')
     guessing_word = guessing_word.lower()
     # creating an empty list
@@ -12,10 +12,9 @@ if __name__ == "__main__":
 
     # adding an underscore to the empty list for letter there is
     for letter in guessing_word:
-        player_2_word.append ('_')
+        player_2_word.append('_')
 
     print(' '.join(player_2_word))
-
 
     # setting a counter of incorrect guesses
     incorrect_guesses = 0
@@ -24,12 +23,11 @@ if __name__ == "__main__":
 
     while incorrect_guesses <= 10 and game_won == False:
 
-
-       # asking the user to guess a letter
+        # asking the user to guess a letter
         guess_letter = input('guess a letter ')
 
         if guess_letter in guessing_word:
-            print('correct' )
+            print('correct')
 
             letter_position = 0
 
@@ -45,15 +43,13 @@ if __name__ == "__main__":
 
             # check to see if player 2 has won, and can exit while loop
             if guessing_word == ''.join(player_2_word):
-
-
-              game_won = True
+                game_won = True
         else:
-            print ('incorrect')
+            print('incorrect')
             incorrect_guesses += 1
 
     if incorrect_guesses == 11:
-      print('player 1 has won')
+        print('player 1 has won')
 
     if game_won == True:
-      print('player 2 has won')
+        print('player 2 has won')
