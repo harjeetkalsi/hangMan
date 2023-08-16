@@ -1,12 +1,25 @@
-
+import random
 if __name__ == "__main__":
+    while True:
+        mode_type = input('do you want 1 player yes/no ')
+        if mode_type == "yes":
+            word_list = ['sunday', 'train', 'armidilo', 'tree', 'pencil']
 
-    # First thing printed when we start the game
-    print('Player 2 look away')
+    # pick a random element from a list of strings.
+            guessing_word = random.choice(word_list)
+            break
+        elif mode_type == "no":
+            # First thing printed when we start the game
+            print('Player 2 look away')
 
-    # gets user to input a word and its saves as guessing word.
-    guessing_word = input('Type a word,then press enter,then ctrl+l ')
-    guessing_word = guessing_word.lower()
+            # gets user to input a word and its saves as guess ing word.
+            guessing_word = input('Type a word,then press enter,then ctrl+l ')
+            guessing_word = guessing_word.lower()
+            break
+        else:
+            print("wrong word please input yes or no")
+
+
     # creating an empty list
     player_2_word = []
 
@@ -48,8 +61,14 @@ if __name__ == "__main__":
             print('incorrect')
             incorrect_guesses += 1
 
-    if incorrect_guesses == 11:
+    if incorrect_guesses == 11 and mode_type == "no":
         print('player 1 has won')
 
-    if game_won == True:
+    if incorrect_guesses == 11 and mode_type == "yes":
+        print('you have lost try again')
+
+    if game_won == True and mode_type == "no":
         print('player 2 has won')
+
+    if game_won == True and mode_type == "yes":
+        print('You won')
